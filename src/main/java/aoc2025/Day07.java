@@ -1,6 +1,6 @@
 package aoc2025;
 
-public class Day07 implements Day {
+public class Day07 extends Day {
 
     public String part1() {
         return "test";

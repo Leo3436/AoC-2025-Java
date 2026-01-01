@@ -1,15 +1,19 @@
 package aoc2025;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.Scanner;
 
 class Main {
-    public static void main(String[] args) {
-        System.out.println("Input a number 1-12");
+    public static void main(String[] args) throws IOException {
+        int inputNumber = 0;
 
-        Scanner s = new Scanner(System.in);
-        int inputNumber = s.nextInt();
-        // TODO IF NUMBER IF < 1 OR > 12 ASK THE USER AGAIN TO INPUT A NUMBER
+        while(inputNumber < 1 || inputNumber > 12) {
+            System.out.println("Input a number 1-12");
+
+            Scanner s = new Scanner(System.in);
+            inputNumber = s.nextInt();
+        }
 
         int dayNumber = inputNumber-1;
 
