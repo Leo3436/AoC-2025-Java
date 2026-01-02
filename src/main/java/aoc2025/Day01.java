@@ -48,11 +48,21 @@ public class Day01 extends Day {
             int distance = Integer.parseInt(command.substring(1));
 
             if(direction == 'R') {
+                int fullRotations = distance / 100;
+                counter += fullRotations;
+
+                int remainder = distance % 100;
+                if (pointer > 0 && (remainder + pointer >= 100)) counter++;
+
                 pointer = (pointer + distance) % 100;
-                if(pointer == 0) counter++;
             } else {
-                pointer = (pointer - distance + 100) % 100;
-                if(pointer == 0) counter++;
+                int fullRotations = distance / 100;
+                counter += fullRotations;
+
+                int remainder = distance % 100;
+                if(pointer > 0 && remainder >= pointer) counter++;
+
+                pointer = (pointer - remainder + 100) % 100;
             }
         }
 
